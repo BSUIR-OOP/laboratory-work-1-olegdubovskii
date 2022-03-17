@@ -1,14 +1,17 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Figures {
 
-    private static final Figures[] arrayOfFigures = new Figures[6];
+    public static final ArrayList<Figures> figures = new ArrayList<>();
 
     static {
-        arrayOfFigures[0] = new Trapezium(1, 2, 3, 4);
-        arrayOfFigures[1] = new Rectangle(5, 6, 7, 8);
-        arrayOfFigures[2] = new Star(9, 10 ,11, 12);
-        arrayOfFigures[3] = new Pentagon(13, 14, 15, 16);
-        arrayOfFigures[4] = new Triangle(17, 18, 19, 20);
-        arrayOfFigures[5] = new Circle(21, 22, 23, 24);
+       figures.add(new Trapezium(1, 2, 3, 4) );
+       figures.add(new Rectangle(5, 6, 7, 8) );
+       figures.add(new Star(9, 10 ,11, 12) );
+       figures.add(new Pentagon(13, 14, 15, 16) );
+       figures.add(new Triangle(17, 18, 19, 20) );
+       figures.add(new Circle(21, 22, 23, 24) );
     }
 
     protected double x1;
@@ -66,12 +69,7 @@ public class Figures {
     }
 
     public void output(){
-        System.out.print(this.nameOfFigure + "(" + this.x1 + ", " + this.y1 + ", " + this.x2 + ", " + this.y2 + ") ");
+        System.out.print(getNameOfFigure() + "(" + getX1() + ", " + getY1() + ", " + getX2() + ", " + getY2() + ") ");
     };
 
-    public static void main(String[] args) {
-        for (Figures temporaryFigure: arrayOfFigures) {
-            temporaryFigure.output();
-        }
-    }
 }
